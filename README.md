@@ -20,17 +20,28 @@ password: `pass`
 
 ### Manual Installation
 
+Suggestion:
+
+Install `openssh-server` if you are doing the installation for a VM and you want to access remotely. Add a Port forwarding rule.
+
+Do the following if you want to open gui apps (Gazebo for example) from ssh sessions. 
+
+```
+echo 'export DISPLAY=:0' >> ~/.bashrc
+```
+
 Install ROS packages
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/eavelardev/turtlebot3_drl/master/scripts/install_ros.sh)"
+sh -c "$(wget https://raw.github.com/eavelardev/turtlebot3_drl/master/scripts/install_ros.sh -O -)"
 source ~/.bashrc
 ```
 
 Install TurtleBot3 packages
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/eavelardev/turtlebot3_drl/master/scripts/install_turtlebot3.sh)"
-source ~/.bashrc
+sh -c "$(wget https://raw.github.com/eavelardev/turtlebot3_drl/master/scripts/install_turtlebot3.sh -O -)"
 ```
+
+Restart terminal
 
 ### Test environment
 
